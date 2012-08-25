@@ -9,3 +9,4 @@ New features
 * Safe survival state saving to files (This means no more data lost)
 * More dynamic mode switching action with custom user/actionscripts
 * Integrated profile management (previusly known as Duties-Groups)
+* ...
