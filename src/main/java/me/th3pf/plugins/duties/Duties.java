@@ -8,7 +8,7 @@ public class Duties
 	//Management of the instance
 	private PluginInstance instance;
 	
-	public PluginInstance getInstancee()
+	public PluginInstance getInstance()
 		{return this.instance;}
 		
 	public LinkedHashMap<UUID, MemoryHandler> getMemory()
