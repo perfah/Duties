@@ -6,10 +6,19 @@ import java.util.UUID;
 public class Duties
 {
 	//Management of the instance
-	private DutiesImpl impl;
-		public Duties getInstance()
-			{return this.impl.Instance;}
-
+	private PluginInstance instance;
+	
+	public PluginInstance getInstancee()
+		{return this.instance;}
+		
 	public LinkedHashMap<UUID, MemoryHandler> getMemory()
-	{return this.impl.Memory;}
+		{return this.instance.Memory;}
+	
+	private Duties()
+	{
+		this.instance.Label = "Duties";
+		this.instance.Memory = new LinkedHashMap<UUID, MemoryHandler>();
+	}
+	
+	
 }

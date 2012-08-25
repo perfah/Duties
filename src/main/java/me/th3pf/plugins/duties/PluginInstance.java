@@ -3,8 +3,8 @@ package me.th3pf.plugins.duties;
 import java.util.LinkedHashMap;
 import java.util.UUID;
 
-public abstract class DutiesImpl
+public abstract class PluginInstance
 {
-	public Duties Instance;
+	public String Label;
 	public LinkedHashMap<UUID, MemoryHandler> Memory;
 }
