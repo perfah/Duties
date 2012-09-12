@@ -7,21 +7,21 @@ public class MessageHandler
 {
 	private ArrayList<String> strings;
 	
-	public MessageHandler(String stringsDirectory, String language, String fileExts)
+	public MessageHandler(String stringsDirectory, String language)
 	{
-		Scan(stringsDirectory, language, fileExts);
+		CollectStrings(stringsDirectory, language);
 	}
 	
 	/**
-	 * Scans for strings in the specified language.
-	 * @param directory The location of the folder 'strings'
-	 * @param language The name of language container.
+	 * Searches for strings in the specified language located in a specified directory.
+	 * @param directory The location of the directory containing strings.
+	 * @param language The language the strings should be in.
 	 */
-	public void Scan(String directory, String language, String fileExts)
+	public void CollectStrings(String directory, String language)
 	{
 		if(!new File(directory + File.separator + language).exists())
 		{
-			//file extractor...?
+			
 		}
 	}
 	
@@ -32,33 +32,6 @@ public class MessageHandler
 	 */
 	public String getString(int ID)
 	{
-		return formatString(strings.get(ID));
-	}
-	
-	private String formatString(String input)
-	{
-		return input
-				.replaceAll("&0", "§0")
-				.replaceAll("&1", "§1")
-				.replaceAll("&2", "§2")
-				.replaceAll("&3", "§3")
-				.replaceAll("&4", "§4")
-				.replaceAll("&5", "§5")
-				.replaceAll("&6", "§6")
-				.replaceAll("&7", "§7")
-				.replaceAll("&8", "§8")
-				.replaceAll("&9", "§9")
-				.replaceAll("&a", "§a")
-				.replaceAll("&b", "§b")
-				.replaceAll("&c", "§c")
-				.replaceAll("&d", "§d")
-				.replaceAll("&e", "§e")
-				.replaceAll("&f", "§f")
-				.replaceAll("&k", "§k")
-				.replaceAll("&l", "§l")
-				.replaceAll("&m", "§m")
-				.replaceAll("&n", "§n")
-				.replaceAll("&o", "§o")
-				.replaceAll("&r", "§p");
+		return strings.get(ID); //parseChatColors
 	}
 }
