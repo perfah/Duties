@@ -2,9 +2,11 @@ package me.th3pf.plugins.duties.utils;
 
 import java.util.ArrayList;
 
-public class ChatFormatting
+public class ChatFormattingUtility
 {
-	public static void writeList(int stream, ArrayList<String> list, int rowLimit, int page)
+	public static String ParseChatColors(String source){return null;} //temp
+	
+	public static void WriteList(int stream, ArrayList<String> list, int rowLimit, int page)
 	{
 		//rowLimit = 40;
 			
