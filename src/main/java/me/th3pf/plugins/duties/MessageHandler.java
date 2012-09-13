@@ -1,6 +1,5 @@
 package me.th3pf.plugins.duties;
 
-import java.io.File;
 import java.util.ArrayList;
 
 import me.th3pf.plugins.duties.utils.ChatFormattingUtility;
@@ -9,9 +8,9 @@ public class MessageHandler
 {
 	private ArrayList<String> strings;
 	
-	public MessageHandler(String stringsDirectory, String language)
+	public MessageHandler(Configuration configuration)
 	{
-		CollectStrings(stringsDirectory, language);
+		CollectStrings(configuration);
 	}
 	
 	/**
@@ -20,14 +19,9 @@ public class MessageHandler
 	 * @param language The language the strings should be in.
 	 */
 	@SuppressWarnings("unchecked")
-	public void CollectStrings(String directory, String language)
+	public void CollectStrings(Configuration configuration)
 	{
-		if(!new File(directory + File.separator + language).exists())
-		{
-			//Turn to defaults
-		}
-		
-		this.strings = ((ArrayList<String>)Duties.Configuration.get(1).GetValue("Strings"));
+		this.strings = (ArrayList<String>)configuration.GetValue("Strings");
 	}
 	
 	/**
