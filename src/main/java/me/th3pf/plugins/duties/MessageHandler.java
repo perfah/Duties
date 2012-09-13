@@ -40,6 +40,7 @@ public class MessageHandler
 		String output = this.strings.get(ID);
 		
 		variables[variables.length + 1] = Duties.Label;
+		variables[variables.length + 1] = Duties.Language;
 		variables[variables.length + 1] = System.getProperty("line.separator");
 		
 		for(int i = 0; i < variables.length; i++)

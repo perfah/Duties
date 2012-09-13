@@ -13,14 +13,12 @@ import java.util.LinkedHashMap;
 
 public class Configuration
 {
-	private File cfgFile;
 	private String cfgDefaultsFilePath;
 	private Object yamlHandler;
 	private LinkedHashMap<String, String> defaults;
 
 	public Configuration(File cfgFile, String cfgDefaultsFilePath)
 	{
-		this.cfgFile = cfgFile;
 		this.cfgDefaultsFilePath = cfgDefaultsFilePath;
 		this.yamlHandler = new Object(); // = new YamlConfiguration(cfgFile);
 		this.defaults = getDefaults();
