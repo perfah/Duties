@@ -6,7 +6,7 @@ public class ChatFormattingUtility
 {
 	public static String ParseChatColors(String source){return null;} //temp
 	
-	public static void WriteList(int stream, ArrayList<String> list, int rowLimit, int page)
+	public static void WriteList(Object stream, ArrayList<String> list, int rowLimit, int page)
 	{
 		//rowLimit = 40;
 			

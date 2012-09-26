@@ -29,7 +29,7 @@ public class MemoryHandler
 		
 		public void exportValues(UUID entityID) {} //playerObject.FireTicks = thia.FireTicks;
 		
-		//Memory space field // >>Everything in here must be serializible<<
+		//Memory space field // >>Everything in here must be serializable<<
 		
 	  //FireTicks FireTicks; ...
 		ArrayList<Object> etcData; 

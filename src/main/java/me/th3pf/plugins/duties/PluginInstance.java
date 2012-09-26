@@ -26,12 +26,16 @@ public class PluginInstance
 		Language = Configuration.get(0).GetValue("language").toString();
 		
 		Configuration.addAll (Arrays.asList(new Configuration[] {
-			new Configuration(new File("%getDataFolder()%" + File.separator + "lang" + File.separator + Language), "/cgfdefaults/" + Language)
+			new Configuration(new File("%getDataFolder()%" + File.separator + "lang" + File.separator + Language), File.separator + "cgfdefaults" + File.separator + Language)
 		}));
 		
 		Memory = new LinkedHashMap<UUID, MemoryHandler>(); 
 		Statistics = new LinkedHashMap<UUID, PlayerStatistics>(); 
-		MessageHandler = new MessageHandler(Configuration.get(1));
+		MessageHandler = new MessageHandler(Configuration.get(1), new String[] {
+			Label,
+			Language,
+			System.getProperty("line.separator")
+		});
 		
 	}
 }

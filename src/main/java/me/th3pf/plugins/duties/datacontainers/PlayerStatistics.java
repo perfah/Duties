@@ -15,41 +15,16 @@ public class PlayerStatistics
 			this.date = date;
 		}
 	}
-	
-	private int pos;
 	private Shift[] shifts;
 	
-	public int getPosition()
-		{return this.pos;}
+	public Shift getShift(int pos)
+		{return this.shifts[pos];}
 	
-	public void setPosition(int position)
-		{this.pos = position;}
+	public void setShift(int pos, int ticks, int date)
+		{this.shifts[pos] = new Shift(ticks, date);}
 	
-	public void nextPosition()
-		{this.pos++;}
-	
-	public void previousPosition()
-		{this.pos--;}
-	
-	
-	public Shift getShift()
-		{return this.shifts[this.pos];}
-	
-	public void setShift(int ticks, int date)
-		{this.shifts[this.pos] = new Shift(ticks, date);}
-	
-	public int getTicks()
-		{return this.shifts[this.pos].ticks;}
-
-	public void setTicks(int ticks)
-		{this.shifts[this.pos].date = ticks;}
-	
-	
-	public int getDate()
-		{return this.shifts[this.pos].date;}
-	
-	public void setDate(int date)
-		{this.shifts[this.pos].date = date;}
+	public void addShift(int ticks, int date)
+		{this.shifts[this.shifts.length] = new Shift(ticks, date);}
 	
 	
 	public ArrayList<Integer> matchDate(int date)

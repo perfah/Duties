@@ -1,41 +1,30 @@
 package me.th3pf.plugins.duties;
 
-import java.util.ArrayList;
-
 import me.th3pf.plugins.duties.utils.ChatFormattingUtility;
 
 public class MessageHandler
 {
-	private ArrayList<String> strings;
+	private String[] strings;
+	private String[] envVariables;
 	
-	public MessageHandler(Configuration configuration)
+	public MessageHandler(Configuration configuration, String[] envVariables)
 	{
-		CollectStrings(configuration);
-	}
-	
-	/**
-	 * Searches for strings in the specified language located in a specified directory.
-	 * @param directory The location of the directory containing strings.
-	 * @param language The language the strings should be in.
-	 */
-	@SuppressWarnings("unchecked")
-	public void CollectStrings(Configuration configuration)
-	{
-		this.strings = (ArrayList<String>)configuration.GetValue("Strings");
+		this.strings = (String[]) configuration.GetValue("Strings");
+		this.envVariables = envVariables;
 	}
 	
 	/**
 	 * Get a specified string from the language files. 
-	 * @param ID The ID of the specified message.
-	 * @return
+	 * @param ID The ID of the requested message.
+	 * @param variables Insert optional variables in to message. Using the slots 0-9 is recommended.
+	 * @return the requested string
 	 */
 	public String getString(int ID, String[] variables)
 	{
-		String output = this.strings.get(ID);
+		String output = this.strings[ID];
 		
-		variables[variables.length + 1] = Duties.Label;
-		variables[variables.length + 1] = Duties.Language;
-		variables[variables.length + 1] = System.getProperty("line.separator");
+		for(int i = 0; i < this.envVariables.length; i++)
+			variables[variables.length + 1] = envVariables[i];
 		
 		for(int i = 0; i < variables.length; i++)
 			output.replaceAll("%" + i, variables[i]);

@@ -11,8 +11,8 @@ If you want to follow the development, >>here's my twitter: http://bit.ly/QIqD8e
 Changes
 --------
 * Rewritten for Workbench, the new Minecraft API
-* Safe survival state saving to files (>>This means no more data lost on server chrashes.<<)
-* Possibly a new survival player simulator, meaning that it could spawn an npc of you where your was offduty
+* Safe survival state saving to files (this means no more data lost on server crashes).
+* Possibly a new survival player simulator, meaning that it could spawn a npc of you where you were off-duty
 * Integrated profile management (previously known as Duties-Groups)
 * Integrated statistics management (previously known as Duties-Stats)
 * ...
