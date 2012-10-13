@@ -31,7 +31,7 @@ public class MemoryHandler
 		
 		//Memory space field // >>Everything in here must be serializable<<
 		
-	  //FireTicks FireTicks; ...
+		//FireTicks FireTicks; ...
 		ArrayList<Object> etcData; 
 		
 		//End of memory spade field

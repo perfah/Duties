@@ -8,8 +8,9 @@ import java.util.UUID;
 
 import me.th3pf.plugins.duties.datacontainers.MemoryHandler;
 import me.th3pf.plugins.duties.datacontainers.PlayerStatistics;
+import me.th3pf.plugins.duties.tmp.JavaPlugin;
 
-public class PluginInstance
+public class PluginInstance extends JavaPlugin
 {
 	public static String Label;
 	public static String Language;
@@ -18,15 +19,15 @@ public class PluginInstance
 	public static LinkedHashMap<UUID, PlayerStatistics> Statistics;
 	public static MessageHandler MessageHandler;
 	
-	public void newInstance()
+	protected void setup()
 	{
 		Label = "Duties"; //temp
-		Configuration.add(new Configuration(new File("%getDataFolder()%" + File.separator + "config.yml"), "/cfgdefaults/main"));
+		Configuration.add(new Configuration(new File(getDataFolder().getAbsolutePath() + File.separator + "config.yml"), "/cfgdefaults/main"));
 		
 		Language = Configuration.get(0).GetValue("language").toString();
 		
 		Configuration.addAll (Arrays.asList(new Configuration[] {
-			new Configuration(new File("%getDataFolder()%" + File.separator + "lang" + File.separator + Language), File.separator + "cgfdefaults" + File.separator + Language)
+			new Configuration(new File(getDataFolder().getAbsolutePath() + File.separator + "lang" + File.separator + Language), File.separator + "cgfdefaults" + File.separator + Language)
 		}));
 		
 		Memory = new LinkedHashMap<UUID, MemoryHandler>(); 
@@ -37,5 +38,15 @@ public class PluginInstance
 			System.getProperty("line.separator")
 		});
 		
+	}
+	
+	protected void free()
+	{
+		Label = "";
+		Language = "";
+		Configuration.clear();
+		Memory.clear();
+		Statistics.clear();
+		MessageHandler = null;
 	}
 }

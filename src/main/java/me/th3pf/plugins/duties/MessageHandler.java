@@ -29,6 +29,6 @@ public class MessageHandler
 		for(int i = 0; i < variables.length; i++)
 			output.replaceAll("%" + i, variables[i]);
 		
-		return ChatFormattingUtility.ParseChatColors(output);
+		return ChatFormattingUtility.ParseChatColors(output); //return output.replaceAll("m/0x[0-9a-f]+/", arg1)
 	}
 }

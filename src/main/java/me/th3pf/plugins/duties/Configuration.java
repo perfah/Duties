@@ -11,36 +11,37 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.LinkedHashMap;
 
+import me.th3pf.plugins.duties.tmp.YamlConfiguration;
+
 public class Configuration
 {
 	private String cfgDefaultsFilePath;
-	private Object yamlHandler;
+	public YamlConfiguration yamlHandler;
 	private LinkedHashMap<String, String> defaults;
 
 	public Configuration(File cfgFile, String cfgDefaultsFilePath)
 	{
 		this.cfgDefaultsFilePath = cfgDefaultsFilePath;
-		this.yamlHandler = new Object(); // = new YamlConfiguration(cfgFile);
+		this.yamlHandler = new YamlConfiguration(cfgFile);
 		this.defaults = getDefaults();
 		
 		Upgrade();
 	}
 	
-	public Object getYamlHandler()
-		{return this.yamlHandler;}
-	
 	public Object GetValue(String node)
 	{
-		return null; //this.yamlHandler..(node);
+		return this.yamlHandler.Get(node);
 	}
 	
 	public void SetValue(String node, String value)
 	{
-		//this.yamlHandler..set(node);
+		this.yamlHandler.Set(node, value);
 	}
 	
 	public void Upgrade()
 	{
+		//header = ...version... info... unused
+		
 		for(int i = 0; i < this.defaults.size(); i++)
 		{
 			if (GetValue(this.defaults.get(i)).equals(""))
