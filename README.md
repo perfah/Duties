@@ -5,9 +5,10 @@ Duties provides an escape route for admins and mods (these who do have the permi
 
 The planned release time is just after the Minecraft API has become released and usable. I estimate it to be ready when Minecraft gets it's 1.6 update. Until then I will keep updating Duties 1.x in case there's a reported bug or something breaks.
 
-Please keep in mind that the project is far from done, and there are still major decisions left to make regarding the workflow. Therefore, it's still too early to draw any conclusion about the project.
+Please keep in mind that the project is far from done, and there are still major decisions left to make regarding the workflow.
 
 Links:
+--------
 * Old project page: http://bit.ly/Nqadlg
 * Twitter: http://bit.ly/QIqD8e
 * Workbench: http://bit.ly/QKeEZ6
